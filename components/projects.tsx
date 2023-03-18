@@ -9,8 +9,8 @@ enum Mode {
   Gallery,
   Focus,
 }
-const fastScroll = 40;
-const slowScroll = 10;
+const fastScroll = 60;
+const slowScroll = 20;
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   // define our state variables and default types
@@ -51,9 +51,9 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
       const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
       console.log(gallery.scrollLeft);
       if (gallery.scrollLeft <= 0 && scrollSpeed == -slowScroll) {setScrollSpeed(slowScroll)};
-       if (gallery.scrollLeft >= maxScrollLeft && scrollSpeed != slowScroll) {setScrollSpeed(-slowScroll)};
+       if (gallery.scrollLeft >= maxScrollLeft-20 && scrollSpeed != slowScroll) {setScrollSpeed(-slowScroll)};
     };
-  }, 100); 
+  }, 10); 
     
   const handleMouseEnter = (index: number) => {
     setHoveredProject(index);
@@ -101,30 +101,35 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
           onMouseLeave={handleMouseLeave}
           onClick={() => focusProject(project)}
         >
-          <img src={project.imageUrl} alt={project.name} />
+          <img	src={project.imageUrl}	alt={project.name} />
           <h3>{project.name}</h3>
           <p>{project.shortBlurb}</p>
         </div>
       ))}
       <style jsx>{`
         .gallery {
-display: flex;
-height: 100%;
+          display: flex;
+          height: 100%;
           overflow-x: scroll;
           padding: 1rem;
-align-items: center;
-border: 1px solid green;
+          align-items: center;
+          border: 1px solid green;
         }
         .project-card {
           flex: 0 0 auto;
           scroll-snap-align: center;
           cursor: pointer;
+          max-height:60vh;
           padding: 1rem;
           margin-left: 2rem;
           transition: transform 0.5s;
           border: 1px solid blue;
         }
-      `}</style>
+        .project-card img {
+          max-height: 40vh;
+        }
+
+         `}</style>
     </div>
   );
 

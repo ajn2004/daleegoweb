@@ -29,7 +29,7 @@ function NavBar() {
   const getClassNames = (section) => {
     return active === section ? styles.active : '';
   };
-
+  
   return (
     <div className={styles.navwrap}>
       <div className={styles.navbar}>
