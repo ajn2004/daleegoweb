@@ -10,7 +10,7 @@ enum Mode {
   Focus,
 }
 const fastScroll = 60;
-const slowScroll = 20;
+const slowScroll = 25;
 
 const Projects: React.FC<ProjectsProps> = ({ projects }) => {
   // define our state variables and default types
@@ -49,9 +49,8 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     const gallery = galleryRef.current
      if(gallery) {
       const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
-      console.log(gallery.scrollLeft);
       if (gallery.scrollLeft <= 0 && scrollSpeed == -slowScroll) {setScrollSpeed(slowScroll)};
-       if (gallery.scrollLeft >= maxScrollLeft-20 && scrollSpeed != slowScroll) {setScrollSpeed(-slowScroll)};
+       if (gallery.scrollLeft >= maxScrollLeft-20 && scrollSpeed == slowScroll) {setScrollSpeed(-slowScroll)};
     };
   }, 10); 
     
