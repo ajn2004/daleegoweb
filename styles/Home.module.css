@@ -1,4 +1,5 @@
 .body {
+    overflow-y: scroll;
     margin: 0;
     background:black;
 }
@@ -55,3 +56,73 @@
   font-size: 4rem;
   color: limegreen;
 }
+
+.about {
+  display: flex;
+  width: 82vw;
+  height: auto;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid green; /* add 'solid' to specify the border style */
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem auto; /* add auto to center the element horizontally */
+  border: 10px solid red; /* add 'solid' to specify the border style */
+  /* padding: 2rem; /\* add some padding to the element *\/ */
+  height: 90vh;
+  box-sizing: border-box; /* include padding and border in element width */
+  align-items: center;
+  border-radius: 1px;
+  justify-content: space-between;
+}
+
+.bioname{
+    font-size:2rem;
+    padding-top: 1rem;
+}
+.biopic{
+    padding: 0.3rem;
+    border-radius: 10px;
+    height: 43vh;
+    width: auto;
+}
+.bioframe{
+    border-radius: 10px;
+    border: 2px solid red;
+}
+.bio {
+    border-radius: 10px;
+    padding: 1rem;
+}
+.biotext{
+    display: flex;
+    flex-direction: column;
+    font-size:2rem;
+    text-align: center;
+}
+.biotext p {
+    margin: 0.6rem 0;
+}
+
+.projects {
+    display:flex;
+    height: 100vh;
+    width: 82vw;
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact {
+    display:flex;
+    height: 100vh;
+    width: 82vw;
+    border: 1px solid blue;
+    justify-content: center;
+    align-items: center;
+}
+

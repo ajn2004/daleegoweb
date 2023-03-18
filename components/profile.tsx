@@ -29,17 +29,18 @@ const Profile = (props: proProps) => {
   return(
     <div id={props.name}>
       <div id='profile' className={styles.profile} style={{transform:x,}}>
+        <div id={props.name} className={styles.bioname} style={{transform:x}}>
+          <u>{props.bioname}</u>
+	</div>
+	
 	<div id='bioframe' className={styles.bioframe} style={{transform:x, boxShadow:border_color}}>
 	  <img id='biopic' className={styles.biopic} src = {props.pic_file}></img>
 	</div>
-      <div id='bio' className={styles.bio} style={{transform:x, boxShadow:border_color}}>
-	  <div id={props.name} className={styles.bioname}>
-	    <u>{props.bioname}</u>
-	  </div>
-	  <div id='biotext' className={styles.biotext}>
-	    {props.string1} <br></br><br></br>
-	    {props.string2} <br></br><br></br>
-	    {props.string3} 
+        <div id='bio' className={styles.bio} style={{transform:x, boxShadow:border_color}}>
+         <div id='biotext' className={styles.biotext}>
+	    <p>{props.string1}</p>
+	    <p>{props.string2}</p>
+	    <p>{props.string3}</p>
 	  </div>
 	</div>
       </div>
