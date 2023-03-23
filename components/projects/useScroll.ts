@@ -1,15 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
-import { Project } from '../project';
 import React from 'react';
 
 const slowScroll = 25;
 const fastScroll = 60;
 
-interface UseScrollProps {
-  projects: Project[];
-}
 
-const useScroll = ({ projects }: UseScrollProps) => {
+const useScroll = () => {
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const [haltScroll, setHaltScroll] = useState<boolean>(false);
   const [scrollSpeed, setScrollSpeed] = useState<number>(slowScroll);

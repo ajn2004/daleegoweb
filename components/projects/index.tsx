@@ -1,31 +1,27 @@
 import React, { useState } from 'react';
-import { Project } from '../project';
 import Gallery from './Gallery';
 import Focus from './Focus';
 import styles from '@/styles/Home.module.css';
-import { isUint16Array } from 'util/types';
-interface ProjectsProps {
-  projects: Project[];
-}
 
 enum Mode {
   Gallery,
   Focus,
 }
 
-const Projects: React.FC<ProjectsProps> = ({ projects }) => {
-  // ...logic for switching between Gallery and Focus views
+const Projects = () => {
+  
+ // ...logic for switching between Gallery and Focus views
   // keep track of which project is 'in focus'
   const [mode, setMode] = useState<Mode>(Mode.Gallery);
-  const [focusedProject, setFocusedProject] = useState<Project | null>(null);
+  const [projectID, setProjectID] = useState<number | null>(null);
   const [fade, setFade] = useState<boolean>(false);
 
-  
-  const focusProject = (project: Project) => {
-    setFade(true)
-    setTimeout(() =>{
-      setMode(Mode.Focus);
-      setFocusedProject(project);
+  // This causes us to swap from gallery to focus
+  const focusProject = (index: number) => {
+    setFade(true) // fade to soften the transition
+    setTimeout(() =>{ // timeout prevents snap changes seen by user
+      setMode(Mode.Focus); // swap to focused mode
+      setProjectID(index); // 
       setFade(false)
     }, 250)
   };
@@ -35,6 +31,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     setFade(true)
     setTimeout(() =>{
       setMode(Mode.Gallery);
+      setProjectID(null);
       setFade(false)
     }, 250)  };
 
@@ -47,9 +44,14 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
     }}
       >
       {mode == Mode.Gallery? (
-    <Gallery projects={projects} focusProject={focusProject}/>
+	<Gallery
+	focusProject={focusProject}
+	  />
       ):(
-    <Focus returnToGallery={returnToGallery}/>
+	<Focus
+	returnToGallery={returnToGallery}
+	projectID={projectID}
+	  />
       )}
     </div>
       

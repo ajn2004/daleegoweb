@@ -1,20 +1,19 @@
-import React, { useState, useRef } from 'react';
-import { Project } from '../project';
+import React from 'react';
+import { projects } from './components';
 import useScroll from './useScroll';
-import styles from '@/styles/Home.module.css';
+
 interface GalleryProps {
-  projects: Project[];
-  focusProject: (project: Project) => void;
+  focusProject: (project: number) => void;
 }
 
-const Gallery: React.FC<GalleryProps> = ({ projects, focusProject }) => {
+const Gallery: React.FC<GalleryProps> = ({ focusProject }) => {
   const { 
     galleryRef, 
     handleMouseEnter, 
     handleMouseLeave, 
     handleUserDisengage,
     hoveredProject
-  } = useScroll(projects);
+  } = useScroll(); // attach our horizontal scrolling features and get the functions that make the gallery responsive to user
 
   return (
       <div
@@ -32,7 +31,7 @@ const Gallery: React.FC<GalleryProps> = ({ projects, focusProject }) => {
           }}
         onMouseEnter={() => handleMouseEnter(index)}
           onMouseLeave={handleMouseLeave}
-          onClick={() => focusProject(project)}
+          onClick={() => focusProject(project.id)}
         >
           <img	src={project.imageUrl}	alt={project.name} />
           <h3>{project.name}</h3>

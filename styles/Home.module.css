@@ -8,6 +8,7 @@
     background:black;
     color: white;
 }
+/* animation pane */
 .backsplash {
   display: flex;
   position: absolute;
@@ -17,6 +18,7 @@
   z-index: 1;
 }
 
+/* Navbar CSS  */
 .navbar {
   display: flex;
   flex-direction: column;
@@ -57,6 +59,7 @@
   color: limegreen;
 }
 
+/* About Us CSS */
 .about {
   display: flex;
   width: 82vw;
@@ -106,6 +109,8 @@
 .biotext p {
     margin: 0.6rem 0;
 }
+
+/* Projects CSS */
 .gallery_glass {
     border: 1px solid red;
     height: 100%;
@@ -121,7 +126,20 @@
     align-items: center;
 }
 
+.focus {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    border: 2px solid green;
+    font-color: white;
+}
 
+.focus button {
+    margin-top: 4rem;
+    height: 3rem;
+    width: 6reml;
+}
+/* Contact CSS */
 .contact {
     display:flex;
     flex-direction: column;
