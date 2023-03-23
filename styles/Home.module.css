@@ -106,7 +106,11 @@
 .biotext p {
     margin: 0.6rem 0;
 }
-
+.gallery_glass {
+    border: 1px solid red;
+    height: 100%;
+    width: 100%;
+}
 .projects {
     display:flex;
     height: 100vh;
@@ -119,10 +123,29 @@
 
 .contact {
     display:flex;
-    height: 100vh;
-    width: 82vw;
+    flex-direction: column;
+    height: 80vh;
+    width: 82%;
     border: 1px solid blue;
     justify-content: center;
     align-items: center;
 }
 
+.contact h1{
+    border: 1px solid red;
+}
+.contact_wrap {
+    display:flex;
+    border: 1px solid green;
+    padding: 2%;
+    /* height: 80%; */
+    width: 60%;
+    justify-content: space-between;
+    /* align-items: center; */
+}   
+.contact_card {
+    border: 1px solid blue;
+    width: 45%;
+    text-align: center;
+    justify-content: center;
+}

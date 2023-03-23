@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import styles from '@/styles/Home.module.css';
 import NavBar from '@/components/NavBar';
 import About from '@/components/about';
-import Projects from '@/components/projects';
+import Projects from '@/components/projects/';
 import Contact from '@/components/contact';
 import {Project} from '@/components/project';
 
