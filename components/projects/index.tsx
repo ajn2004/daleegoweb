@@ -8,6 +8,8 @@ enum Mode {
   Focus,
 }
 
+const transTime = 500; // transition timing in ms; blackout for gallery/project switch
+
 const Projects = () => {
   
  // ...logic for switching between Gallery and Focus views
@@ -23,7 +25,7 @@ const Projects = () => {
       setMode(Mode.Focus); // swap to focused mode
       setProjectID(index); // 
       setFade(false)
-    }, 250)
+    }, transTime)
   };
 
   // allow us to return to the gallery from a project
@@ -33,14 +35,14 @@ const Projects = () => {
       setMode(Mode.Gallery);
       setProjectID(null);
       setFade(false)
-    }, 250)  };
+    }, transTime)  };
 
   return (
     <div
     className={styles.gallery_glass}
     style={{
       opacity: fade? 0: 1,
-      transition: `opacity 0.25s`,
+      transition: `opacity {transTime/1000}s`,
     }}
       >
       {mode == Mode.Gallery? (

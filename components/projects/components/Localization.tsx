@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Localization = () => {
+function Localization() {
   return (
     <></>
   );

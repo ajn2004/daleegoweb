@@ -20,22 +20,20 @@ const useScroll = () => {
       if (gallery){
 	const divBounds = gallery.getBoundingClientRect();
 	const x = (e.clientX - divBounds.left) / divBounds.width;
-	const y = (e.clientY - divBounds.top) / divBounds.height;
 	if (x > 0.9){ // handle edge navigation
 	  setScrollSpeed(fastScroll);
 	}else if (x < 0.1){
 	  setScrollSpeed(-fastScroll);
 	};
-	console.log(x);
-	console.log(y);
       };
     };
-    galleryRef.current?.addEventListener('mousemove', handleMouse)
+   galleryRef.current?.addEventListener('mousemove', handleMouse)
     
     return () => {
       galleryRef.current?.removeEventListener('mousemove', handleMouse)
     };
   }, []);
+
   // Interactive useEffects
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,7 +62,7 @@ const useScroll = () => {
 	scrollRef.current = -scrollSpeed; // keeping track of our scroll speed
       };
     };
-  }; // this appears to be working properly
+  };
   
   
    // handle a mouse entering a project card 

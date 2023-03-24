@@ -112,33 +112,88 @@
 
 /* Projects CSS */
 .gallery_glass {
+    display: flex;
     border: 1px solid red;
+    align-items: center;
     height: 100%;
     width: 100%;
     z-index: 3;
 }
 .projects {
     display:flex;
-    height: 100vh;
-    width: 82vw;
-    border: 1px solid blue;
+    height: 80vh;
+    width: 82%;
+    /* border: 1px solid blue; */
     justify-content: center;
     align-items: center;
 }
 
 .focus {
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 100%;
     width: 100%;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     font-color: white;
 }
 
+.focusBody{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* align-items: center; */
+    justify-content: space-between;
+    /* border: 1px solid blue; */
+}
+
+
+.description {
+    display:flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    width: 40%;
+    min-height: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1%;
+    /* border: 1px solid green; */
+}
+
+.description p{
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+.description p a{
+    font-size: 1.6rem;
+    font-family: "BankGothic", sans-serif; 
+    color: white;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    text-decoration: none;
+    background: #b7a194;
+    border-radius: 15px;
+    box-shadow: 0px 0px 20px rgb(203, 174, 166, 0.9);
+    /* border: 1px solid red; */
+    padding: 1rem;
+    transition: box-shadow 0.5s, background 0.75s;
+}
+.description p a:hover{
+    box-shadow: 0px 0px 20px rgb(255, 0, 0, 0.9);
+    background: rgb(255, 0, 0, 0.7);
+    transition: box-shadow 0.5s, background 0.75s;
+}
 .focus button {
     margin-top: 4rem;
     height: 3rem;
-    width: 6reml;
+    width: 16rem;
 }
+
 /* Contact CSS */
 .contact {
     display:flex;

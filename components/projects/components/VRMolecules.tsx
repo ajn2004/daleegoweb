@@ -1,6 +1,6 @@
 import React from 'react';
 
-const VRMolecules = () => {
+function VRMolecules () {
   return (
     <>
     </>

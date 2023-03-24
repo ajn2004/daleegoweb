@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
 import styles from "@/styles/Home.module.css";
 
 function NavBar() {
@@ -11,13 +10,15 @@ function NavBar() {
 
       for (let section of sections.reverse()) {
         const element = document.getElementById(section);
+	if (element){
         const rect = element.getBoundingClientRect();
-         if (rect.top <= 0 && rect.bottom >= 0) {
-	   // element.scrollIntoView({behavior: 'smooth'});
-           setActive(section);
-           break;
-         }
-	setActive('contact');
+          if (rect.top <= 0 && rect.bottom >= 0) {
+	    // element.scrollIntoView({behavior: 'smooth'});
+            setActive(section);
+            break;
+          }
+	  setActive('contact');
+	};
       }
     };
 
@@ -29,7 +30,7 @@ function NavBar() {
 
   const handleClick = (section: string) =>{
     const element = document.getElementById(section);
-    element.scrollIntoView({
+    element?.scrollIntoView({
       behavior: 'smooth',
     });
   }
