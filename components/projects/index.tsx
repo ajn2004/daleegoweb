@@ -42,7 +42,7 @@ const Projects = () => {
     className={styles.gallery_glass}
     style={{
       opacity: fade? 0: 1,
-      transition: `opacity {transTime/1000}s`,
+      transition: `opacity ${transTime/1000.0}s`,
     }}
       >
       {mode == Mode.Gallery? (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '@/styles/Home.module.css';
 import { projects } from './components';
 // My project specific components are imported here, it's too manual, we should only have
@@ -17,11 +17,18 @@ const Focus: React.FC<FocusProps> = ({ returnToGallery, projectID }) => {
   if (!project){
     return null;
   }
-
+  const [galBack, setGalBack] = useState(project.projectBackgr);
   const ProjectComponent = project.component;
-  
+
+  const handleMouseOver = () => {
+    setGalBack(project.projectShadow)
+  }
+  const handleMouseExit = () => {
+    setGalBack(project.projectBackgr)
+  }
   return (
-    <div className={styles.focus}>
+    <div className={styles.focus}
+      >
       <h1>{project.name}</h1>
       <div className={styles.focusBody}>
         <div className={styles.description}>
@@ -29,20 +36,38 @@ const Focus: React.FC<FocusProps> = ({ returnToGallery, projectID }) => {
   	    <p
 	    key={description}
 	    style={{
-	      boxShadow: `0px 0px 20px rgb(${project.projectShadow},0.9)`,
-	      background: `rgb(${project.projectBackgr}, 0.7)`,
+	      boxShadow: `0px 0px 25px rgb(${project.projectShadow},0.8)`,
+	      background: `rgb(${project.projectBackgr}, 0.5)`,
 	      color: `rgb(${project.projectText})`,
 		}}
 	      >{description}</p>
 	  ))}
           {project.outsideLink? <p><a href={project.outsideLink}>WOULD YOU LIKE TO KNOW MORE?</a></p>:<></>} 
-        </div>
+    </div>
+      <div
+    style={{
+      display: 'flex',
+      position: 'relative',
+      minHeight: '100%',
+      borderRadius: '20px',
+      boxShadow: `0px 0px 20px rgb(${project.projectShadow},0.7)`,
+    }}
+      >
       <ProjectComponent
-    shadowColor={project.shadowColor}
-    background={project.background}
-      />
+      /></div>
       </div>
-      <button onClick={returnToGallery}>Back to Gallery</button>
+      <div
+    className={styles.backGal}
+    style={{
+      boxShadow: `0px 0px 10px rgb(${project.projectShadow},0.5)`,
+      background: `rgb(${galBack}, 0.5)`,
+      transition: 'background 0.5s',
+      color: `rgb(${project.projectText})`,
+		}}
+    onClick={returnToGallery}
+    onMouseOver={handleMouseOver}
+    onMouseLeave={handleMouseExit}
+      >Back to Gallery</div>
     </div>
   );
 };

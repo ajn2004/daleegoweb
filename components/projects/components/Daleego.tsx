@@ -1,7 +1,6 @@
 import React from 'react';
-import {projectProps} from './project'
 
-function Daleego ({background, shadowColor} : projectProps) {
+function Daleego () {
   // I want these props to set background and boxShadow colors for this element
   // please make this happen chatGPT
   const code = '/daleego_typescript.png'
@@ -12,8 +11,8 @@ function Daleego ({background, shadowColor} : projectProps) {
       display:'flex',
       // border: '1px solid red',
       borderRadius: '15px',
-      background: `${background}`,
-      boxShadow: `${shadowColor}`,
+      // background: `${background}`,
+      // boxShadow: `0px 0px 25px rgb(${shadowColor}, 0.7)`,
       // justifyContent: 'center',
     }}
       >

@@ -33,7 +33,11 @@ const Gallery: React.FC<GalleryProps> = ({ focusProject }) => {
           onMouseLeave={handleMouseLeave}
           onClick={() => focusProject(project.id)}
         >
-          <img	src={project.imageUrl}	alt={project.name} />
+          <img
+	src={project.imageUrl}
+	alt={project.name}
+	style={{maxWidth:'60vw', height:'auto'}}
+	  />
           <h3>{project.name}</h3>
           <p>{project.shortBlurb}</p>
         </div>
@@ -52,9 +56,10 @@ const Gallery: React.FC<GalleryProps> = ({ focusProject }) => {
           scroll-snap-align: center;
           cursor: pointer;
           max-height:60vh;
+          max-width:60vw;
           padding: 1rem;
           margin-left: 2rem;
-          transition: transform 0.5s;
+          transition: transform 0.5
           border: 1px solid blue;
         }
         .project-card img {

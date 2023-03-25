@@ -20,7 +20,7 @@ const projects: Project[] = [
     {
       id: 2,
       name: "Molecular Cartography",
-      imageUrl: "/guild_icon.png",
+      imageUrl: "/spin_bouton.gif",
       shortBlurb: "Putting the pieces together.",
       component: SurfaceRender,
       description: ["Writing this website has been a blast. It's one of the first projects I've built entirely in my customized Emacs IDE.", "I incorporated React and Next to create the dynamism you see here.", "Here's a quick view of some of the code, but you can check it out on github if you're interested."],
@@ -34,7 +34,9 @@ const projects: Project[] = [
       shortBlurb: "The beerer of boo!",
       component: VRMolecules,
       description: ["Writing this website has been a blast. It's one of the first projects I've built entirely in my customized Emacs IDE.", "I incorporated React and Next to create the dynamism you see here.", "Here's a quick view of some of the code, but you can check it out on github if you're interested."],
-      projectColor: '75, 159, 248',// the rgb value csv will be properly incorporated elsewhere in the code
+      projectShadow: '75, 159, 248',// the rgb value csv will be properly incorporated elsewhere in the code
+      projectBackgr: '30, 30, 30',
+      projectText: '199, 183, 133',// the rgb value csv will be properly incorporated elsewhere in the code
 
     },
     {

@@ -1,0 +1,49 @@
+import React from 'react';
+
+const surfaceSet = '/surface_bouton.csv';
+const rawDataSet = '/drift_corrected_raw_bouton.csv';
+
+interface PointCloudProps {
+  data: number[][];
+}
+
+interface Point {
+  x: number;
+  y: number;
+  z: number;
+  t: number|null;
+}
+
+interface CsvData{
+  points: Point[];
+}
+
+export const VRMolecules = ({ data }: PointCloudProps) => {
+  // create point cloud from data and add to scene
+  const geometry = new THREE.BufferGeometry();
+  const positions = new Float32Array(data.flat());
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  const material = new THREE.PointsMaterial({ size: 0.05, color: 0xffffff });
+  const points = new THREE.Points(geometry, material);
+  const scene = new THREE.Scene();
+  scene.add(points);
+
+  // set up camera and renderer
+  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+  camera.position.z = 5;
+  const renderer = new THREE.WebGLRenderer();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  // render loop
+  const animate = () => {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  };
+  animate();
+
+  // return an empty div since the component is rendering through the renderer
+  return <div />;
+};
+
+export default VRMolecules;
