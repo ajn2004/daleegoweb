@@ -91,7 +91,7 @@ const BasicScene = () => {
       radius: 1,
     });
     scene.add(greenMesh)
-
+    
        
     // Create a resize listener
     const handleResize = () => {

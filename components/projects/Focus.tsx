@@ -42,7 +42,7 @@ const Focus: React.FC<FocusProps> = ({ returnToGallery, projectID }) => {
 		}}
 	      >{description}</p>
 	  ))}
-          {project.outsideLink? <p><a href={project.outsideLink}>WOULD YOU LIKE TO KNOW MORE?</a></p>:<></>} 
+          {project.outsideLink? <p><a href={project.outsideLink} target='_blank'>WOULD YOU LIKE TO KNOW MORE?</a></p>:<></>} 
     </div>
       <div
     style={{

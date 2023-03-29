@@ -1,8 +1,8 @@
 import Daleego from './Daleego';
 import Localization from './Localization';
-import SurfaceRender from './SurfaceRender';
 import VRMolecules from './VRMolecules';
 import { Project } from './project';
+import Cartography from './cartography';
 // Organize the various components to be exported easily to the focus project  
 const projects: Project[] = [
     {
@@ -22,10 +22,12 @@ const projects: Project[] = [
       name: "Molecular Cartography",
       imageUrl: "/spin_bouton.gif",
       shortBlurb: "Putting the pieces together.",
-      component: SurfaceRender,
-      description: ["Writing this website has been a blast. It's one of the first projects I've built entirely in my customized Emacs IDE.", "I incorporated React and Next to create the dynamism you see here.", "Here's a quick view of some of the code, but you can check it out on github if you're interested."],
-      projectColor: '75, 159, 248',// the rgb value csv will be properly incorporated elsewhere in the code
-
+      component: Cartography,
+      description: ["In order to understand 'what something does', you have to know where it is. Localization microscopy can help answer these questions.", "Much of my research focused on reconstructing molecular positions in living neurons.", "Here I was able measure and reconstruct a cell's surface, as well as the location of the synaptic vesicles in 3D."],
+      outsideLink: 'https://www.nature.com/articles/s43586-021-00038-x',
+      projectShadow: '129, 18, 214',
+      projectBackgr: '30, 30, 30',
+      projectText: '199, 183, 133',
     },
     {
       id: 3,
@@ -62,4 +64,4 @@ const projects: Project[] = [
     // ... more projects
 ];
 
-export {Daleego, VRMolecules, Localization, SurfaceRender, projects, Project};
+export {Daleego, VRMolecules, Localization, Cartography, projects, Project};

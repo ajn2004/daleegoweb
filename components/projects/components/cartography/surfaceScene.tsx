@@ -1,5 +1,5 @@
-// This file is the basic scene to show us how we can get up and started
-// we're ging to want a couple of different versions here to 
+// Surface scene reconstructs a resting bouton / vGlut distribution
+// I want it to rotate 
 
 import * as THREE from 'three';
 import { useState, useRef, useEffect } from 'react';
