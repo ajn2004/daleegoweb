@@ -48,9 +48,14 @@ const Focus: React.FC<FocusProps> = ({ returnToGallery, projectID }) => {
     style={{
       display: 'flex',
       position: 'relative',
+      left: '3rem',
       minHeight: '100%',
       borderRadius: '20px',
+      // border: '1px solid green',
       boxShadow: `0px 0px 20px rgb(${project.projectShadow},0.7)`,
+      // width: '60vw',
+      // height: '100%',
+      height: '60vh',
     }}
       >
       <ProjectComponent

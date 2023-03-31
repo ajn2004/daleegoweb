@@ -21,7 +21,7 @@ const Gallery: React.FC<GalleryProps> = ({ focusProject }) => {
     ref={galleryRef}
     onMouseLeave={handleUserDisengage}
       >
-      {projects.map((project, index) => (
+      {projects.map((project,index) => (
         <div
           key={project.id}
           id={`project-${index}`}
