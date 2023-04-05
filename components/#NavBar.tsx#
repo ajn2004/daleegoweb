@@ -7,6 +7,29 @@ function NavBar() {
 
   const largeFont = '2rem';
   const smallFont = '1rem';
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = ['main', 'about','projects', 'contact'];
+
+      for (let section of sections.reverse()) {
+        const element = document.getElementById(section);
+	if (element){
+        const rect = element.getBoundingClientRect();
+          if (rect.top <= 0 && rect.bottom >= 0) {
+	    // element.scrollIntoView({behavior: 'smooth'});
+            setActive(section);
+            break;
+          }
+	  setActive('contact');
+	};
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const handleClick = (section: string) =>{
     const element = document.getElementById(section);
@@ -42,30 +65,30 @@ function NavBar() {
     className={getClassNames('main')}
     style={{
       fontSize: isActive?largeFont:smallFont,
-      transition: 'font-size 0.5s',
+      transition: 'size 0.5s',
     }}
       >Home</a>
       <a
     onClick={() => handleClick('about')}
     className={getClassNames('about')}
     style={{
-      fontSize: isActive?largeFont:smallFont,
-      transition: 'font-size 0.5s',
-    }}>About</a>
+      fontSize: isActive?
+	transition: 'size 0.5s',
+    }}>About Us</a>
       <a
     onClick={() => handleClick('projects')}
     className={getClassNames('projects')}
     style={{
-      fontSize: isActive?largeFont:smallFont,
-      transition: 'font-size 0.5s',
+      fontSize: isActive?'2rem':'1rem',
+      transition: 'size 0.5s',
     }}>Projects</a>
       <a
     onClick={() => handleClick('contact')}
     className={getClassNames('contact')}
-    style={{
-      fontSize: isActive?largeFont:smallFont,
-      transition: 'font-size 0.5s',
-    }}>Contact Me</a>
+          style={{
+      fontSize: isActive?'2rem':'1rem',
+      transition: 'size 0.5s',
+    }}>Contact Us</a>
       </div>
     </div>
   );

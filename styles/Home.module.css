@@ -1,11 +1,12 @@
 .body {
     overflow-y: scroll;
     margin: 0;
+    max-width: 1200px;
     background:black;
 }
 
 .main{
-    background:rgb(20,20,20);
+    background:rgb(30,30,30);
     color: white;
 }
 /* animation pane */
@@ -51,7 +52,7 @@
   align-items: center;
   flex-direction: column;
   background-color: rgba(34, 64, 110, 0.4);
-  z-index: 2;
+  z-index: 20;
 }
 
 .navbar .active {
@@ -62,24 +63,23 @@
 /* About Us CSS */
 .about {
   display: flex;
-  width: 82vw;
+  width: 90%;
   height: auto;
   flex-direction: row;
-  justify-content: space-between;
-  border: 1px solid green; /* add 'solid' to specify the border style */
+  /* border: 1px solid green; /\* add 'solid' to specify the border style *\/ */
 }
 
 .profile {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin: 4rem auto; /* add auto to center the element horizontally */
-  border: 10px solid red; /* add 'solid' to specify the border style */
+  /* border: 10px solid red; */
   /* padding: 2rem; /\* add some padding to the element *\/ */
-  height: 90vh;
+  /* height: 90vh; */
   box-sizing: border-box; /* include padding and border in element width */
   align-items: center;
   border-radius: 1px;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .bioname{
@@ -94,17 +94,19 @@
 }
 .bioframe{
     border-radius: 10px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 .bio {
     border-radius: 10px;
     padding: 1rem;
+    width: 50%;
+    margin-left: 4rem;
 }
 .biotext{
     display: flex;
     flex-direction: column;
     font-size:2rem;
-    text-align: center;
+    text-align: left;
 }
 .biotext p {
     margin: 0.6rem 0;
@@ -113,16 +115,17 @@
 /* Projects CSS */
 .gallery_glass {
     display: flex;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     align-items: center;
-    height: 100%;
+    /* height: 100%; */
+    margin-left: 5%;
     width: 100%;
     z-index: 3;
 }
 .projects {
     display:flex;
     height: 90vh;
-    width: 82%;
+    width: 90%;
     /* border: 1px solid blue; */
     justify-content: center;
     align-items: center;
@@ -154,7 +157,7 @@
     padding-right: 5%;
     align-items: center;
     /* justify-content: space-between; */
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     padding-bottom: 2rem;
 }
 
@@ -245,28 +248,40 @@
 .contact {
     display:flex;
     flex-direction: column;
-    height: 80vh;
-    width: 82%;
-    border: 1px solid blue;
+    /* height: 80vh; */
+    width: 90%;
+    /* border: 1px solid blue; */
     justify-content: center;
     align-items: center;
 }
 
 .contact h1{
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .contact_wrap {
     display:flex;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     padding: 2%;
     /* height: 80%; */
     width: 60%;
-    justify-content: space-between;
+    justify-content: center;
     /* align-items: center; */
 }   
 .contact_card {
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 45%;
     text-align: center;
     justify-content: center;
+    max-height: 32px;
+}
+
+.contact_card.a{
+    position: relative;
+    top: 0rem;
+    transition: top 0.5s;
+}
+
+.contact_card.a:hover{
+    top: -1rem;
+    transition: top 0.5s;
 }

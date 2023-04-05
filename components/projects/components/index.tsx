@@ -12,8 +12,8 @@ const projects: Project[] = [
       imageUrl: "/roosevelt_island.jpg",
       shortBlurb: "This website was coded by Andrew in TS without a template.",
       component: Daleego,
-      description: ["Writing this website has been a blast. It's one of the first projects I've built entirely in my customized Emacs IDE.", "I incorporated React and Next to create the dynamism you see here. No templates were used and all files were built from scratch.", "Here's a quick view of some of the code, but you can check it out on github if you're interested."],
-      outsideLink: 'https://github.com/ajn2004/daleegoweb',
+      description: ["Writing this website has been a blast. It's one of the first projects I've built entirely in my customized Emacs IDE.", "I incorporated React and Next to create the dynamism you see here. No templates were used and all files were built from scratch.", "I built this with Typescript and React, hosted on a custom Linux server"],
+      // outsideLink: 'https://github.com/ajn2004/daleegoweb',
       projectShadow: '75, 159, 248',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '30, 30, 30',
       projectText: '199, 183, 133',
@@ -24,8 +24,8 @@ const projects: Project[] = [
       imageUrl: "/spin_bouton.gif",
       shortBlurb: "Charting the location of molecules in live synapses.",
       component: Cartography,
-      description: ["In order to understand 'what something does', you have to know where it is. Localization microscopy can help answer these questions.", "Much of my research focused on reconstructing molecular positions in living neurons.", "Here I was able measure and reconstruct a cell's surface, as well as the location of the synaptic vesicles in 3D."],
-      outsideLink: 'https://www.nature.com/articles/s43586-021-00038-x',
+      description: ["In order to understand 'what something does', you have to know where it is. Localization microscopy can help answer these questions.", "Much of my research focused on reconstructing molecular positions in living neurons.", "Here I was able measure and reconstruct a cell's surface, as well as the location of the synaptic vesicles in 3D.","Tech Stack: MATLAB AI/CV ML, regression, clustering, non-linear low dimensional embeddings."],
+      // outsideLink: 'https://www.nature.com/articles/s43586-021-00038-x',
       projectShadow: '129, 18, 214',
       projectBackgr: '30, 30, 30',
       projectText: '199, 183, 133',
@@ -48,7 +48,7 @@ const projects: Project[] = [
       imageUrl: "/scopeCover.jpg",
       shortBlurb: "Pinpointing molecules in a nanoscope.",
       component: Localization,
-      description: ["Localization microscopy is a wonderfully successful technique even sharing the Nobel prize in Chemistry in 2014.", "My research utilized this technique in novel ways, trying to better capture the secret dance of molecules.", "Here's a simulated video of whatraw localization data looks like. My data pipeline is capable of recreating the 3D location of molecules from videos like these."],
+      description: ["Localization microscopy captures the image of individual molecules in a movie like the one shown here.", "We can utilize AI and computer vision to determine the position of each molecule on the screen. Once we analyze the whole video, we can look at all the molecules at once.", "These molecules are on the surface of a neuron, I used data sets like these to recreate the 3D models shown elsewhere on this site.","Tech Stack: Photonics, Experimental Design, CV/ML, Automation"],
       projectShadow: '0, 218, 24',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '30, 30, 30',
       projectText: '230, 130, 210',// the rgb value csv will be properly incorporated elsewhere in the code
@@ -59,7 +59,7 @@ const projects: Project[] = [
       imageUrl: "/scopeSetup.jpg",
       shortBlurb: "I take a lot of pictures, here are some to click through",
       component: Varipics,
-      description: ["Microscopy is photography, and I enjoy capturing, studying, and communicating visual data.", "I'm a sucker for fluoresence, optics, and the beauty of good sunsets.", "Here are some of my pictures I want to share, clicking one will take you to the next."],
+      description: ["Here are some of my pictures I want to share, clicking one will take you to the next."],
       projectShadow: '190, 151, 38',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '10, 10, 10',
       projectText: '222, 206, 178',// the rgb value csv will be properly incorporated elsewhere in the code

@@ -8,19 +8,11 @@ function About() {
       <Profile
     name='Andrew'
     bioname='Andrew Nelson PhD'
-    string1="Hey there, I'm Andrew"
-    string2="I am a physicist who enjoys tackling complex challenges."
-    string3="I'm excited to share a little of what We've been working on with you."
+    string1="Hi, I'm Andrew, and with me are Dalton and Diego"
+    string2="I am a physicist who enjoys tackling complex challenges and building data-driven solutions."
+    string3="Daleego is a play on the cats' names, as well as a platform for me to explore webhosting and project communication."
     pic_file='./andrew_cats_cropped.png'
-    />
-      <Profile
-    name='desiree'
-    bioname='Desiree Nelson'
-    string1="Hey there, I'm Desiree"
-    string2="I am a solutions architect who enjoys learning by doing."
-    string3="Please look around Daleego and get to know more about what we're up to!"
-    pic_file='./desiree_icon.png'
-    />
+      />
       </div>
   );
 }

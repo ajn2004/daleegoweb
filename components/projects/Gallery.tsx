@@ -45,11 +45,12 @@ const Gallery: React.FC<GalleryProps> = ({ focusProject }) => {
       <style jsx>{`
         .gallery {
           display: flex;
-          height: 100%;
           overflow-x: scroll;
           padding: 1rem;
-          align-items: center;
-          border: 1px solid green;
+align-items: center;
+box-shadow: 0px 0px 25px rgb(0, 255, 0, 0.5);
+border-radius: 25px;
+
         }
         .project-card {
           flex: 0 0 auto;
@@ -60,7 +61,6 @@ const Gallery: React.FC<GalleryProps> = ({ focusProject }) => {
           padding: 1rem;
           margin-left: 2rem;
           transition: transform 0.5
-          border: 1px solid blue;
         }
         .project-card img {
           max-height: 40vh;

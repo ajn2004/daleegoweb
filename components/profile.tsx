@@ -28,11 +28,7 @@ const Profile = (props: proProps) => {
   
   return(
     <div id={props.name}>
-      <div id='profile' className={styles.profile} style={{transform:x,}}>
-        <div id={props.name} className={styles.bioname} style={{transform:x}}>
-          <u>{props.bioname}</u>
-	</div>
-	
+      <div id='profile' className={styles.profile} style={{transform:x,}}>	
 	<div id='bioframe' className={styles.bioframe} style={{transform:x, boxShadow:border_color}}>
 	  <img id='biopic' className={styles.biopic} src = {props.pic_file}></img>
 	</div>
