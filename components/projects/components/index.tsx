@@ -2,8 +2,9 @@ import Daleego from './Daleego';
 import Localization from './Localization';
 import Bread from './sourdough';
 import Varipics from './varipics';
-import { Project } from './project';
+import { Project} from './project';
 import Cartography from './cartography';
+import Projects from '..';
 // Organize the various components to be exported easily to the focus project  
 const projects: Project[] = [
     {
@@ -17,6 +18,7 @@ const projects: Project[] = [
       projectShadow: '75, 159, 248',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '30, 30, 30',
       projectText: '199, 183, 133',
+      outsideLink: null,
     },
     {
       id: 2,
@@ -29,6 +31,7 @@ const projects: Project[] = [
       projectShadow: '129, 18, 214',
       projectBackgr: '30, 30, 30',
       projectText: '199, 183, 133',
+      outsideLink: null,
     },
     {
       id: 3,
@@ -40,7 +43,7 @@ const projects: Project[] = [
       projectShadow: '216, 162, 120',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '30, 30, 30',
       projectText: '231, 212, 201',// the rgb value csv will be properly incorporated elsewhere in the code
-
+      outsideLink: null,
     },
     {
       id: 4,
@@ -52,6 +55,7 @@ const projects: Project[] = [
       projectShadow: '0, 218, 24',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '30, 30, 30',
       projectText: '230, 130, 210',// the rgb value csv will be properly incorporated elsewhere in the code
+      outsideLink: null,
     },
  {
       id: 5,
@@ -63,9 +67,10 @@ const projects: Project[] = [
       projectShadow: '190, 151, 38',// the rgb value csv will be properly incorporated elsewhere in the code
       projectBackgr: '10, 10, 10',
       projectText: '222, 206, 178',// the rgb value csv will be properly incorporated elsewhere in the code
+      outsideLink: null,
     },
    
     // ... more projects
 ];
 
-export {Daleego, Bread, Localization, Cartography, projects, Project};
+export {Daleego, Bread, Localization, Cartography, projects}

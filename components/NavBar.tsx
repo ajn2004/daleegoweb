@@ -14,7 +14,7 @@ function NavBar() {
       behavior: 'smooth',
     });
   }
-  const getClassNames = (section) => {
+  const getClassNames = (section: string) => {
     return active === section ? styles.active : '';
   };
   const handleMouseEnter = () =>{

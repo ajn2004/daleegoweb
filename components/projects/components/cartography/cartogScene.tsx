@@ -6,7 +6,6 @@ import styles from '@/styles/Home.module.css';
 
 interface pointProps{ // properties of the point cloud generation script
   inputArray: number[],
-  scene: THREE.Scene | undefined,
   color: number,
   radius: number,
   widthSegments: number,
@@ -84,7 +83,7 @@ const CartogScene = () => {
       return instancedMesh;
     };
     
-    async function getArrayFromFile(fname: string): [number[], number[]]{
+    async function getArrayFromFile(fname: string): Promise<number[][]>{
       return fetch(fname)
 	.then(response => response.text())
 	.then(text => {	  
@@ -112,20 +111,27 @@ const CartogScene = () => {
 	    }
 	    return [outArr1, outArr2];
 	  }else{
-	    throw new Error('Invalid file format: ${fname}')
+	    throw new Error(`Invald File format: ${fname}`);
 	  }
 	})
-	.catch(error => console.error(error))
-    }
+	.catch(error => {
+	  throw error;
+	});
     // let's load our mesh array
-
+    };
     async function loadSurfaceMesh() {
       try{
+	console.log('arrayin')
 	const surfaceArray = await getArrayFromFile('/surface_bouton.csv')
+	console.log('array time')
+	console.log(surfaceArray[0])
 	const surfaceMesh = getPoints({
 	  inputArray :surfaceArray[0],
 	  color : 0x4B0092,
 	  radius: 0.6,
+	  widthSegments: 16,
+	  heightSegments: 16,
+	  scale: 100,
 	});
 	scene.add(surfaceMesh)
 	return surfaceMesh
@@ -135,15 +141,19 @@ const CartogScene = () => {
     }
 
     async function loadLocalizationMesh() {
-      try{	const surfaceArray = await getArrayFromFile('/drift_corrected_raw_bouton.csv')
+      try{
+	const surfaceArray = await getArrayFromFile('/drift_corrected_raw_bouton.csv')
 	const vGlutMesh = getPoints({
 	  inputArray :surfaceArray[1],
 	  color : 0x1AFF1A,
 	  radius: 3.5,
+	  widthSegments: 16,
+	  heightSegments: 16,
+	  scale: 100,
 	});
-		scene.add(vGlutMesh)
+	scene.add(vGlutMesh)
 	return vGlutMesh
-      } catch (error) {
+	 } catch (error) {
 	console.log(error)
       }
     }
@@ -187,7 +197,7 @@ const CartogScene = () => {
 	renderer.setSize(renderWidth , renderHeight);
       };
     };
-    renderContainer.addEventListener('resize', handleResize);
+    renderContainer?.addEventListener('resize', handleResize);
     
     // render
     const animate = () => {
@@ -199,10 +209,10 @@ const CartogScene = () => {
     // Cleanup function
     return () => {
       window.removeEventListener('resize', handleResize);
-      renderContainer.removeChild(rendererInstance.domElement);
+      renderContainer?.removeChild(rendererInstance.domElement);
 
     };
-  }, []);
+  }, [renderContainerRef]);
 
   return <div ref={renderContainerRef} className={styles.cartogScene} />;
 };

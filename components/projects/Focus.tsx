@@ -13,11 +13,11 @@ const Focus: React.FC<FocusProps> = ({ returnToGallery, projectID }) => {
   // we need code that given the projectID, chooses to render the appropriate
   // project data into our focus div
   const project = projects.find((p) => p.id === projectID);
+  const [galBack, setGalBack] = useState(project?.projectBackgr);
 
   if (!project){
     return null;
   }
-  const [galBack, setGalBack] = useState(project.projectBackgr);
   const ProjectComponent = project.component;
 
   const handleMouseOver = () => {
@@ -32,7 +32,7 @@ const Focus: React.FC<FocusProps> = ({ returnToGallery, projectID }) => {
       <h1>{project.name}</h1>
       <div className={styles.focusBody}>
         <div className={styles.description}>
-          {project.description.map((description) => (
+      {project.description.map((description: string) => (
   	    <p
 	    key={description}
 	    style={{

@@ -27,10 +27,12 @@ const useScroll = () => {
 	};
       };
     };
-   galleryRef.current?.addEventListener('mousemove', handleMouse)
+
+    galleryRef.current?.addEventListener('mousemove', (ev: MouseEvent) => handleMouse(ev  as unknown as React.MouseEvent<HTMLElement>))
+    
     
     return () => {
-      galleryRef.current?.removeEventListener('mousemove', handleMouse)
+      galleryRef.current?.removeEventListener('mousemove', (ev: MouseEvent) => handleMouse(ev  as unknown as React.MouseEvent<HTMLElement>))
     };
   }, []);
 
