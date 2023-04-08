@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from "@/styles/Home.module.css";
+import {Link} from 'react-scroll';
 
 function NavBar() {
   const [active, setActive] = useState('');
@@ -37,35 +38,65 @@ function NavBar() {
     className={styles.navbar}
 
       >
-      <a
-    onClick={() => handleClick('main')}
+      <Link
+    to="main"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
     className={getClassNames('main')}
     style={{
-      fontSize: isActive?largeFont:smallFont,
+      fontSize: isActive ? largeFont : smallFont,
       transition: 'font-size 0.5s',
     }}
-      >Home</a>
-      <a
-    onClick={() => handleClick('about')}
+      >
+      Home
+    </Link>
+      <Link
+    to="about"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
     className={getClassNames('about')}
     style={{
-      fontSize: isActive?largeFont:smallFont,
+      fontSize: isActive ? largeFont : smallFont,
       transition: 'font-size 0.5s',
-    }}>About</a>
-      <a
-    onClick={() => handleClick('projects')}
+    }}
+      >
+      About
+    </Link>
+
+     <Link
+    to="projects"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
     className={getClassNames('projects')}
     style={{
-      fontSize: isActive?largeFont:smallFont,
+      fontSize: isActive ? largeFont : smallFont,
       transition: 'font-size 0.5s',
-    }}>Projects</a>
-      <a
-    onClick={() => handleClick('contact')}
+    }}
+      >
+      Projects
+    </Link>
+
+      <Link
+    to="contact"
+    spy={true}
+    smooth={true}
+    offset={-70}
+    duration={500}
     className={getClassNames('contact')}
     style={{
-      fontSize: isActive?largeFont:smallFont,
+      fontSize: isActive ? largeFont : smallFont,
       transition: 'font-size 0.5s',
-    }}>Contact Me</a>
+    }}
+      >
+      Contact Me
+    </Link>
+
       </div>
     </div>
   );

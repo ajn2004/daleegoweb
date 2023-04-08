@@ -24,10 +24,10 @@ export default function Home() {
           style={{
             backgroundImage: `url(${background})`,
 	    height:'100vh',
-	    width:'100vw',
+	    width:'100%',
 	    backgroundSize:'cover'}}
         ></div>
-      <div style={{height:'100vh',width:'100vw', background:'white', zIndex:'0'}}></div>
+      <div style={{height:'100vh',width:'100%', background:'white', zIndex:'0'}}></div>
       <div
     style={{
       fontSize: '3rem',
